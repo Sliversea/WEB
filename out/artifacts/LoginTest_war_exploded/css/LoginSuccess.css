@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    background: url("../images/back.jpg");
+}
+
+.user{
+    text-align: right;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+ul{
+    text-align: center;
+    list-style: none;
+    padding: 10px;
+    background-color:rgba(220,38,38,0.2);
+    overflow: hidden;/*清除浮动，子元素设置浮动不能将父元素撑开*/
+    margin-top: 15%;
+}
+
+li a{
+    display: block;
+    color:#444;
+    text-decoration: none;
+    padding:8px 16px;
+}
+li :hover{
+    background-color:#ccc;
+    color: #3d5cff;
+}

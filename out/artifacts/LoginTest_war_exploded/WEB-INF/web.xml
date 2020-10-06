@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <welcome-file-list>
+        <welcome-file>CheckCookieServlet</welcome-file>
+    </welcome-file-list>
+    <servlet>
+        <servlet-name>CheckCookieServlet</servlet-name>
+        <servlet-class>cn.SliverSea.servlet.CheckCookieServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CheckCookieServlet</servlet-name>
+        <url-pattern>/CheckCookieServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>CheckCodeServlet</servlet-name>
+        <servlet-class>cn.SliverSea.servlet.CheckCodeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CheckCodeServlet</servlet-name>
+        <url-pattern>/CheckCodeServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>cn.SliverSea.servlet.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>cn.SliverSea.servlet.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/LogoutServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>DownloadServlet</servlet-name>
+        <servlet-class>cn.SliverSea.servlet.DownloadServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DownloadServlet</servlet-name>
+        <url-pattern>/DownloadServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>FileDownServlet</servlet-name>
+        <servlet-class>cn.SliverSea.servlet.FileDownServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FileDownServlet</servlet-name>
+        <url-pattern>/FileDownServlet</url-pattern>
+    </servlet-mapping>
+
+    <filter>
+        <filter-name>LoginFilter</filter-name>
+        <filter-class>cn.SliverSea.filter.LoginFilter</filter-class>
+        <init-param>
+            <param-name>notCheckpath</param-name>
+            <param-value></param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>LoginFilter</filter-name>
+        <url-pattern>/main.jsp</url-pattern>
+
+    </filter-mapping>
+</web-app>
