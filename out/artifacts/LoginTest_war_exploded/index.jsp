@@ -14,27 +14,52 @@
     <title>登陆界面</title>
 
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script src="js/jquery-1.3.1.js" type="text/javascript"></script>
-    <script src="js/jquery.validate.js" type="text/javascript"></script>
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/vector.js"></script>
     <script type="text/javascript" src="js/changeCode.js"></script>
     <script type="text/javascript" src="js/backGroundImage.js"> </script>
-    
+
+    <script>
+
+        function login(){
+            $.ajax({
+                url:'AjaxLoginCheckServlet',
+                type:"POST",
+                data:{
+                    username:$("#username").val(),
+                    password:$("#password").val(),
+                    verifycode:$("#verifycode").val()
+                },
+                dataType:"json",
+                success:function(response){
+                    if(response.code == 0){
+                        window.location.href = "main.jsp";
+                    }else {
+                        $("#checkError").text(response.info);
+                    }
+                }
+
+            });
+        }
+
+
+    </script>
 </head>
 <body>
-<form action="LoginServlet" method="post">
+<form  method="post">
     <div id="container">
         <div id="output">
             <div class="containerT">
                 <h1>用户登录</h1>
-                <input class="input" type="text" placeholder="用户名" id="entry_name" name="username">
-                <input class="input" type="password" placeholder="密码" id="entry_password" name="password">
-                <input class="input" type="text" placeholder="验证码" name="verifycode" id="entry_code">
+                <input class="input" type="text" placeholder="用户名" id="username" name="username">
+                <input class="input" type="password" placeholder="密码" id="password" name="password">
+                <input class="input" type="text" placeholder="验证码" name="verifycode" id="verifycode">
                 <img style="cursor: pointer" id="codePic" src="CheckCodeServlet" onclick="changeCode()" title="看不清楚换一张"/><br>
                 <%--<span style="color: red;margin-bottom: 10px">${Msg}</span><br>--%>
-                <label><input type="checkbox" id="check" name="tenDayLogin" value="ok">七天免登录</label>
-                <input class="input" name="Submit" type="submit" class="button" id="Submit" value="登陆" style="cursor: pointer;">
+                <label><input type="checkbox" id="check" name="tenDayLogin" value="ok" >七天免登录</label>
+                <%--<input class="input" name="Submit" type="submit" class="button" id="Submit" value="登陆" style="cursor: pointer;">--%>
+                <input name="Submit" type="button" class="button" value="登陆" onclick="login()" style="cursor: pointer;">
+
             </div>
         </div>
     </div>

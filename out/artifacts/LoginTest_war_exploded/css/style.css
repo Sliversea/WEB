@@ -133,3 +133,27 @@ label{
 form button:hover {
     background-color: #f5f7f9
 }
+
+body {
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    background-color: #1D3647;
+}
+
+em {
+    font-weight: bold;
+    padding-right: 1em;
+    vertical-align: top;
+}
+
+em.error {
+    background: url("/images/unchecked.gif") no-repeat 0px 0px;
+    padding-left: 16px;
+}
+
+em.success {
+    background: url("/images/checked.gif") no-repeat 0px 0px;
+    padding-left: 16px;
+}

@@ -56,6 +56,15 @@
         <servlet-name>FileDownServlet</servlet-name>
         <url-pattern>/FileDownServlet</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>AjaxLoginCheckServlet</servlet-name>
+        <servlet-class>cn.SliverSea.servlet.AjaxLoginCheckServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AjaxLoginCheckServlet</servlet-name>
+        <url-pattern>/AjaxLoginCheckServlet</url-pattern>
+    </servlet-mapping>
 
     <filter>
         <filter-name>LoginFilter</filter-name>
